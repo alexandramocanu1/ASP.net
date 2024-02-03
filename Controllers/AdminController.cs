@@ -13,7 +13,6 @@ namespace Planner.Controllers
         {
             new User { Id = 1, UserName = "admin1", IsAdmin = true },
             new User { Id = 2, UserName = "admin2", IsAdmin = true },
-            // Alți administratori
         };
 
         [HttpGet]
@@ -22,6 +21,5 @@ namespace Planner.Controllers
             return View(Admins);
         }
 
-        // Alte acțiuni pentru administratori, de exemplu, adăugare, ștergere, actualizare
     }
 }

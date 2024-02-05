@@ -1,0 +1,7 @@
+<h2>Flights</h2>
+
+<ul>
+  <li *ngFor="let trip of trips">
+    {{ trip.travelDate | date }} - {{ trip.accommodation }} - Total Cost: {{ trip.calculateTotalCost() }}
+  </li>
+</ul>

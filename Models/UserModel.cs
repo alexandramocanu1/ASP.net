@@ -1,9 +1,12 @@
-﻿namespace Planner.Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace Planner.Models
 {
-    public class User
+    public class User : IdentityUser<Guid>
     {
-        public int Id { get; set; }
-        public string? UserName { get; set; }
+       //public Guid Id { get; set; }
+        //public string? UserName { get; set; }
         public bool IsAdmin { get; set; }
+        public ICollection<UserTripModel>? Trips { get; set; }
     }
 }

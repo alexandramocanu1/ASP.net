@@ -1,18 +1,21 @@
-﻿@model List<Planner.Models.TripModel>
+﻿@{
+    Layout = "_Layout";
+}
 
 <h2>My Trips</h2>
 
-<ul>
-    @foreach (var trip in Model)
-    {
-        <li>@trip.TravelDate.ToShortDateString() - @trip.Accommodation - Total Cost: @trip.CalculateTotalCost()</li>
-    }
-</ul>
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var trip in Model)
+        {
+            <li>@trip.TravelDate.ToShortDateString() - @trip.Accommodation - Total Cost: @trip.CalculateTotalCost()</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No trips available.</p>
+}
 
-<form asp-controller="Trip" asp-action="Add" method="post">
-    <input type="date" name="TravelDate" required />
-    <input type="number" name="TravelDuration" placeholder="Duration (days)" required />
-    <input type="text" name="Accommodation" placeholder="Accommodation" />
-    <input type="checkbox" name="LikedAccommodation" />
-    <button type="submit">Add Trip</button>
-</form>
+<p><a asp-controller="Home" asp-action="AddTrip">Add a new trip</a></p>

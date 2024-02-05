@@ -1,0 +1,37 @@
+﻿@model Planner.Models.TripModel
+
+<h2>Add Trip</h2>
+
+<form asp-controller="Home" asp-action="AddTrip" method="post">
+    <div class="form-group">
+        <label asp-for="TravelDate">Travel Date:</label>
+        <input asp-for="TravelDate" type="date" class="form-control" required />
+        <span asp-validation-for="TravelDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ReturnDate">Return Date:</label>
+        <input asp-for="ReturnDate" type="date" class="form-control" />
+        <span asp-validation-for="ReturnDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TravelDuration">Travel Duration (days):</label>
+        <input asp-for="TravelDuration" type="number" class="form-control" required />
+        <span asp-validation-for="TravelDuration" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Accommodation">Accommodation:</label>
+        <input asp-for="Accommodation" class="form-control" />
+        <span asp-validation-for="Accommodation" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LikedAccommodation">Liked Accommodation:</label>
+        <input asp-for="LikedAccommodation" type="checkbox" class="form-check-input" />
+        <span asp-validation-for="LikedAccommodation" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Trip</button>
+</form>
